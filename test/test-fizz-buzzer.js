@@ -77,11 +77,11 @@ describe('fizzbuzzer',function(){
 
 //unit test for bad inputs
   it('should return error for inputs other than numbers',function(){
-    const badInputs = [true,false,function(){},[1,2,3],'any string'];
+    const badInputs = [true,false,function(){},{},[1,2,3],'any string'];
     try{
       badInputs.forEach(function(input){
         const answer = fizzBuzz(input);
-        expect(answer).to.throw(Error);
+        expect(answer).to.throw('`num` must be a number');
       });
     }catch(err){
       console.log(err.message);
